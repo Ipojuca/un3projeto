@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g/Ns+RghRRfBQ5SnsVcDIqmVTrR1uy/kmJASg+UMw4k7TWRVFmX1cxGMeZyaxLTYNloRjj1cAk6D9P228KtliA==",
+  "dgSpecHash": "ieOkDuzzjzdOf5AnqxXzbLzPMu5cENADDhQEJcV0U4urwafdiLBfgB/BMw5EbeP5TqX9RgsYyAv/A6HlBcm48w==",
   "success": true,
-  "projectFilePath": "C:\\UFRN\\flutter\\un2API\\un2API.csproj",
+  "projectFilePath": "C:\\UFRN\\un3projeto\\un2API\\un2API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ipoju\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ipoju\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.6\\microsoft.data.sqlite.core.6.0.6.nupkg.sha512",

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:un3projeto/componentes/usuarios_listview.dart';
 import 'package:un3projeto/controller/usuariocontroller.dart';
@@ -102,8 +101,8 @@ class _UsuarioPageState extends State<UsuarioPage> {
   // }
 
   void novoUsuario() {
-    final usuario =
-        Usuario(id: 0, nome: "", email: "", fotoUsuario: ByteData(0));
+    final usuario = Usuario(id: 0, nome: "", email: "", fotoUsuario: "");
+    //Usuario(id: 0, nome: "", email: "", fotoUsuario: Uint8List(0));
     Navigator.of(context).pushNamed(AppRoutes.USUARIO_FORM, arguments: usuario);
   }
 }

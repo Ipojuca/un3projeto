@@ -1374,11 +1374,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\UFRN\\flutter\\un2API\\un2API.csproj",
+      "projectUniqueName": "C:\\UFRN\\un3projeto\\un2API\\un2API.csproj",
       "projectName": "un2API",
-      "projectPath": "C:\\UFRN\\flutter\\un2API\\un2API.csproj",
+      "projectPath": "C:\\UFRN\\un3projeto\\un2API\\un2API.csproj",
       "packagesPath": "C:\\Users\\ipoju\\.nuget\\packages\\",
-      "outputPath": "C:\\UFRN\\flutter\\un2API\\obj\\",
+      "outputPath": "C:\\UFRN\\un3projeto\\un2API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -1396,7 +1396,8 @@
       "sources": {
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/bv3XDaOWzrBlah9Oino72LdkL2dr7jZHJuHsdbVgBvKbN6iweb/api": {}
       },
       "frameworks": {
         "net6.0": {

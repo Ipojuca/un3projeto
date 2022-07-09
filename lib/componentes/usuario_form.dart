@@ -1,19 +1,30 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../controller/usuariocontroller.dart';
 import '../models/usuario.dart';
+import 'image_input.dart';
 
 class UsuarioForm extends StatelessWidget {
   UsuarioForm({Key? key}) : super(key: key);
   final _usuarioControllerNome = TextEditingController();
   final _usuarioControllerEmail = TextEditingController();
+  String? _pickedImage;
+  //Uint8List? _pickedImage;
 
   void _loadFormData(Usuario usuario) {
     if (usuario.id != 0) {
       _usuarioControllerNome.text = usuario.nome;
       _usuarioControllerEmail.text = usuario.email;
+      _pickedImage = usuario.fotoUsuario;
     }
+  }
+
+  _selectImage(File? pickedImage) {
+    _pickedImage = base64Encode(pickedImage!.readAsBytesSync());
   }
 
   @override
@@ -32,6 +43,7 @@ class UsuarioForm extends StatelessWidget {
               onPressed: () {
                 usuario.nome = _usuarioControllerNome.text;
                 usuario.email = _usuarioControllerEmail.text;
+                usuario.fotoUsuario = _pickedImage!;
                 if (usuario.id == 0) {
                   Provider.of<UsuarioController>(context, listen: false)
                       .addUsuario(usuario);
@@ -85,6 +97,16 @@ class UsuarioForm extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  bottom: 8.0, left: 15, right: 15, top: 8),
+              child: Column(
+                children: [
+                  const SizedBox(height: 10),
+                  ImageInput(_selectImage),
+                ],
+              ),
+            )
           ]),
         ],
       ),

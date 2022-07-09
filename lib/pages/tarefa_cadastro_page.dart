@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:un3projeto/controller/tarefacontroller.dart';
 import 'package:un3projeto/controller/usuariocontroller.dart';
@@ -20,8 +19,8 @@ class TarefaCadastroPage extends StatefulWidget {
 class _TarefaCadastroPageState extends State<TarefaCadastroPage> {
   final _tarefaControllerDescricao = TextEditingController();
 
-  Usuario _usuario =
-      Usuario(id: 0, nome: '', email: '', fotoUsuario: ByteData(0));
+  Usuario _usuario = Usuario(id: 0, nome: '', email: '', fotoUsuario: "");
+  //Usuario(id: 0, nome: '', email: '', fotoUsuario: Uint8List(0));
   _selecionarUsuario() {
     // setState(() {
     //   usuarioSelecionado = globals.listaUsuariosGlobal[3];

@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
-
 Usuario usuarioFromJson(String str) => Usuario.fromJson(json.decode(str));
 
 String usuarioToJson(Usuario data) => json.encode(data.toJson());
@@ -16,7 +14,8 @@ class Usuario {
   int id;
   String nome;
   String email;
-  ByteData? fotoUsuario;
+  String? fotoUsuario;
+  //Uint8List? fotoUsuario;
 
   factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(
       id: json["id"],
