@@ -112,11 +112,11 @@ class _LoginPageState extends State<LoginPage> {
     auth() async {
       final isNotAuthenticated =
           //_userControllerEmail.text != 'email.teste@gmail.com' ||
-          _userControllerPassword.text != '1234';
+          _userControllerPassword.text != '123';
 
       if (isNotAuthenticated) {
         const snackBar = SnackBar(
-          content: Text('Login inválido'),
+          content: Text('Usuário ou senha invalido!'),
           backgroundColor: Colors.red,
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -191,12 +191,19 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ]),
-            /*const Divider(
-              height: 20,
-            ),*/
-            LoginButton(
-                userControllerEmail: _userControllerEmail,
-                userControllerPassword: _userControllerPassword),
+            ElevatedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                ))),
+                onPressed: auth,
+                child: const Text(
+                  'Entrar no App',
+                )),
+            // LoginButton(
+            //     userControllerEmail: _userControllerEmail,
+            //     userControllerPassword: _userControllerPassword),
             ElevatedButton(
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -214,40 +221,40 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({
-    Key? key,
-    required TextEditingController userControllerEmail,
-    required TextEditingController userControllerPassword,
-  })  : _userControllerEmail = userControllerEmail,
-        _userControllerPassword = userControllerPassword,
-        super(key: key);
+// class LoginButton extends StatelessWidget {
+//   const LoginButton({
+//     Key? key,
+//     required TextEditingController userControllerEmail,
+//     required TextEditingController userControllerPassword,
+//   })  : _userControllerEmail = userControllerEmail,
+//         _userControllerPassword = userControllerPassword,
+//         super(key: key);
 
-  final TextEditingController _userControllerEmail;
-  final TextEditingController _userControllerPassword;
+//   final TextEditingController _userControllerEmail;
+//   final TextEditingController _userControllerPassword;
 
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-        ))),
-        onPressed: () {
-          if ( //_userControllerEmail.text == 'ipojuca@email.com.br' &&
-              _userControllerPassword.text == '123') {
-            Navigator.of(context).pushReplacementNamed(AppRoutes.HOME);
-          } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                  padding: EdgeInsets.all(8.0),
-                  content: Text('Usuário ou senha invalido!')),
-            );
-          }
-        },
-        child: const Text(
-          'Entrar no App',
-        ));
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return ElevatedButton(
+//         style: ButtonStyle(
+//             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+//                 RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(18.0),
+//         ))),
+//         onPressed: () {
+//           if ( //_userControllerEmail.text == 'ipojuca@email.com.br' &&
+//               _userControllerPassword.text == '123') {
+//             Navigator.of(context).pushReplacementNamed(AppRoutes.HOME);
+//           } else {
+//             ScaffoldMessenger.of(context).showSnackBar(
+//               const SnackBar(
+//                   padding: EdgeInsets.all(8.0),
+//                   content: Text('Usuário ou senha invalido!')),
+//             );
+//           }
+//         },
+//         child: const Text(
+//           'Entrar no App',
+//         ));
+//   }
+// }

@@ -9,7 +9,7 @@ class EncryptedSharedPreferencesHelper {
     try {
       return await _encryptedSharedPreferences.setString(key, value);
     } catch (e) {
-      print('Save preferences exception: $e');
+      //print('Save preferences exception: $e');
       return false;
     }
   }
@@ -18,7 +18,7 @@ class EncryptedSharedPreferencesHelper {
     try {
       return await _encryptedSharedPreferences.getString(key);
     } catch (e) {
-      print('Get preferences exception: $e');
+      //print('Get preferences exception: $e');
       return null;
     }
   }

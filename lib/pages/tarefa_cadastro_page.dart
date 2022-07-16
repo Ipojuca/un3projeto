@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:un3projeto/controller/tarefacontroller.dart';
@@ -120,14 +122,23 @@ class _TarefaCadastroPageState extends State<TarefaCadastroPage> {
                           backgroundColor:
                               Theme.of(context).colorScheme.secondary,
                           child:
-                              //Text('${_usuarioController.usuarios[index].id}'),
-                              const ClipRRect(
-                            //child: Image.asset('profile-generic.png'),
-                            child: Icon(
-                              Icons.account_circle,
-                              size: 30,
-                            ),
-                          ),
+                              _usuarioController.usuarios[index].fotoUsuario !=
+                                      null
+                                  ? ClipOval(
+                                      child: SizedBox(
+                                        height: 80.0,
+                                        width: 80.0,
+                                        child: Image.memory(
+                                          base64Decode(_usuarioController
+                                              .usuarios[index].fotoUsuario!),
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                    )
+                                  : const Icon(
+                                      Icons.account_circle,
+                                      size: 30,
+                                    ),
                         ),
                         title: Text(_usuarioController.usuarios[index].nome),
                         subtitle:

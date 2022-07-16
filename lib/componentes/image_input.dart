@@ -24,6 +24,7 @@ class _ImageInputState extends State<ImageInput> {
     XFile imageFile = await _picker.pickImage(
       source: ImageSource.camera,
       maxWidth: 600,
+      maxHeight: 480,
     ) as XFile;
 
     //if (imageFile == null) return;
@@ -46,8 +47,8 @@ class _ImageInputState extends State<ImageInput> {
     return Row(
       children: [
         Container(
-          width: 180,
-          height: 100,
+          width: 90,
+          height: 120,
           decoration: BoxDecoration(
             border: Border.all(width: 1, color: Colors.grey),
           ),

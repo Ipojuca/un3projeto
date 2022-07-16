@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
 
 import '../models/projeto.dart';
+import '../utils/global.dart';
 
 class ProjetoRepository {
   final dio = Dio();
 
-  final url = 'http://10.0.2.2:5025';
+  //final url = 'http://10.0.2.2:5025';
   //final url = 'http://localhost:5025';
 
   Future<List<Projeto>> getProjetos() async {

@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
 
 import '../models/tarefa.dart';
+import '../utils/global.dart';
 
 class TarefaRepository {
   final dio = Dio();
-  final url = 'http://10.0.2.2:5025';
+  //final url = 'http://10.0.2.2:5025';
   //final url = 'http://localhost:5025';
 
   Future<List<Tarefa>> getTarefas(int projetoId) async {
