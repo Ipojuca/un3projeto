@@ -25,6 +25,8 @@ class UsuarioForm extends StatelessWidget {
       if (usuario.fotoUsuario != null) {
         //imagemGlobal = File.fromRawPath(base64Decode(usuario.fotoUsuario!));
         imagemGlobal = base64Decode(usuario.fotoUsuario!);
+      } else {
+        imagemGlobal = null;
       }
     }
   }
