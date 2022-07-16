@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:un3projeto/utils/global.dart';
 
 import '../controller/usuariocontroller.dart';
 import '../models/usuario.dart';
@@ -13,6 +14,7 @@ class UsuarioForm extends StatelessWidget {
   final _usuarioControllerNome = TextEditingController();
   final _usuarioControllerEmail = TextEditingController();
   String? _pickedImage;
+
   //Uint8List? _pickedImage;
 
   void _loadFormData(Usuario usuario) {
@@ -20,6 +22,10 @@ class UsuarioForm extends StatelessWidget {
       _usuarioControllerNome.text = usuario.nome;
       _usuarioControllerEmail.text = usuario.email;
       _pickedImage = usuario.fotoUsuario;
+      if (usuario.fotoUsuario != null) {
+        //imagemGlobal = File.fromRawPath(base64Decode(usuario.fotoUsuario!));
+        imagemGlobal = base64Decode(usuario.fotoUsuario!);
+      }
     }
   }
 

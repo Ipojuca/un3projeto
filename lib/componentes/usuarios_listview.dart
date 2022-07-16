@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -29,15 +31,22 @@ class _UsuarioListViewState extends State<UsuarioListView> {
             ListTile(
               leading: CircleAvatar(
                 backgroundColor: Theme.of(context).colorScheme.secondary,
-                child:
-                    /*Text('${_controller.usuarios[index].id}'),*/
-                    const ClipRRect(
-                  //child: Image.asset('profile-generic.png'),
-                  child: Icon(
-                    Icons.account_circle,
-                    size: 30,
-                  ),
-                ),
+                child: _controller.usuarios[index].fotoUsuario != null
+                    ? ClipOval(
+                        child: Container(
+                          height: 80.0,
+                          width: 80.0,
+                          child: Image.memory(
+                            base64Decode(
+                                _controller.usuarios[index].fotoUsuario!),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      )
+                    : const Icon(
+                        Icons.account_circle,
+                        size: 30,
+                      ),
               ),
               title: Text(_controller.usuarios[index].nome),
               subtitle: Text(_controller.usuarios[index].email),

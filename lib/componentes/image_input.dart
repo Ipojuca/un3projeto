@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart' as syspaths;
+import 'package:un3projeto/utils/global.dart';
 
 class ImageInput extends StatefulWidget {
   final Function onSelectImage;
@@ -59,7 +60,13 @@ class _ImageInputState extends State<ImageInput> {
                   width: double.infinity,
                   fit: BoxFit.cover,
                 )
-              : const Text('Nenhuma Imagem!'),
+              : imagemGlobal != null
+                  ? Image.memory(
+                      imagemGlobal!,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    )
+                  : const Text('Nenhuma Imagem!'),
         ),
         const SizedBox(width: 10),
         Expanded(
