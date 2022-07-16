@@ -25,6 +25,7 @@ class _ImageInputState extends State<ImageInput> {
       source: ImageSource.camera,
       maxWidth: 600,
       maxHeight: 480,
+      imageQuality: 50,
     ) as XFile;
 
     //if (imageFile == null) return;
