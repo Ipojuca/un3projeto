@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:un3projeto/models/projeto.dart';
 
 import '../componentes/projetos_listview.dart';
+import '../controller/projetocontroller.dart';
 import '../utils/app_routes.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,9 +18,9 @@ class _HomePageState extends State<HomePage> {
 
   _selectScreen(int index) async {
     switch (index) {
-      // case 0:
-      //   ProjetosScreen();
-      //   break;
+      case 0:
+        Provider.of<ProjetoController>(context, listen: false).start();
+        break;
       case 1:
         //   var result =
         final Projeto projeto = Projeto(
